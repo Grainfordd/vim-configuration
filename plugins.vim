@@ -19,6 +19,7 @@ Plug 'scrooloose/nerdtree'
 Plug 'jiangmiao/auto-pairs'
 Plug 'alvan/vim-closetag'
 
+" Navegar entre terminales
 Plug 'christoomey/vim-tmux-navigator'
 
 "Comentar lineas
@@ -27,7 +28,7 @@ Plug 'scrooloose/nerdcommenter'
 "html
 Plug 'mattn/emmet-vim'
 
-"IDE
+" Mostrar líneas en la identación
 Plug 'yggdroot/indentline'
 
 "Autocompletado
