@@ -1,35 +1,47 @@
-let mapleader=' '  "Espacio tecla lider
+call plug#begin('~/.vim/plugged')
+
+"Resaltado de syntaxix
+Plug 'octol/vim-cpp-enhanced-highlight'
 
 
-nnoremap <leader>w :w<CR>  " Guardar con <líder> + s
-nnoremap <leader>q :q<CR>
+"Color"Color
+Plug 'morhetz/gruvbox'
 
-"nnoremap <leader>e :e $MYVIMRC<CR>  " Abrir el archivo init.vim con <líder> + e
-nnoremap <leader>e :e ~/.vimrc<CR>  " Abrir el archivo init.vim con <líder> + e
+"Barra inferior con estilo
 
-" Acceder a las configuraciones de mapeado y plugins
-nnoremap <leader>f :e ~/.vim/plugins.vim<CR>
-nnoremap <leader>m :e ~/.vim/maps.vim<CR>
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 
-" Usar <líder> + y para copiar al portapapeles
-vnoremap <leader>y "+y
-nnoremap <leader>y "+y
+"IDE
+Plug 'easymotion/vim-easymotion'
+Plug 'scrooloose/nerdtree'
 
-" Usar <líder> + d para cortar al portapapeles
-vnoremap <leader>d "+d
-nnoremap <leader>d "+d
+"Cierre de parentesis, comillas, etc...
+Plug 'jiangmiao/auto-pairs'
+Plug 'alvan/vim-closetag'
 
-" Usar <líder> + p para pegar desde el portapapeles
-nnoremap <leader>p "+p
-vnoremap <leader>p "+p
+" Surround
+Plug 'tpope/vim-surround'
 
-" Crear nueva linea sin salir del modo normal
-map <Enter> o<ESC>
-map <S-Enter> O<ESC>
+" Navegar entre terminales
+Plug 'christoomey/vim-tmux-navigator'
 
-"Configuración NerdTree
-nmap <leader>nt :NERDTreeFind<CR>
-let NERDTreeQuitOnOpen=1
+"Comentar lineas
+Plug 'tpope/vim-commentary'
 
-"Configuración EasyMotion
-nmap <leader>s <Plug>(easymotion-s2)
+"html
+Plug 'mattn/emmet-vim'
+
+" Mostrar líneas en la identación
+Plug 'yggdroot/indentline'
+
+"Autocompletado
+Plug 'neoclide/coc.nvim', {'branch': 'release'} 
+
+Plug 'ryanoasis/vim-devicons'
+Plug 'adelarsq/vim-emoji-icon-theme'
+
+"Cambiar el cursor cuando se está en modo insertar (Solo para vim)
+"Plug 'wincent/terminus'
+
+call plug#end()
