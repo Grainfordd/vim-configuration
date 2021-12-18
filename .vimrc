@@ -44,8 +44,10 @@ map <F3> : vert term gcc % && ./a.out<CR>
 map <F5> : vert term  python %<CR>
 " Correr programa de c++
 map <F2> : vert term g++ % && ./a.out<CR>
+"Correr LOVE2D
+map <F1> : vert term love .<CR>
 
 "--------------------------------------------
 
 " Modo insertar cuando se entra en terminal (Neovim)
-autocmd TermOpen * startinsert
+"autocmd TermOpen * startinsert
