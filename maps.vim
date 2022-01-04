@@ -1,47 +1,55 @@
-call plug#begin('~/.vim/plugged')
+set encoding=utf-8
+set title  " Muestra el nombre del archivo
+set number  " Indican el número de linea
+syntax enable
+set bg=dark " Fondo Oscuro
+set nowrap " No divide la linea si es muy larga
+set encoding=utf-8
 
-"Resaltado de syntaxix
-Plug 'octol/vim-cpp-enhanced-highlight'
 
+set cursorline
+set scrolloff=5 "mantener al cursor alejado de arriba y abajo"
+set colorcolumn=120 " Muestra la columna límite a 120 caracteres.
 
-"Color"Color
-Plug 'morhetz/gruvbox'
+set laststatus=2
 
-"Barra inferior con estilo
+" Identación a n espacios
+set tabstop=4
+set shiftwidth=4
 
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
+set relativenumber  
+set sw=4
+set mouse=a
 
-"IDE
-Plug 'easymotion/vim-easymotion'
-Plug 'scrooloose/nerdtree'
+set clipboard
 
-"Cierre de parentesis, comillas, etc...
-Plug 'jiangmiao/auto-pairs'
-Plug 'alvan/vim-closetag'
+" Locación de configuración de Plugins, mapeos y COC
+so ~/.vim/plugins.vim
+so ~/.vim/maps.vim
+so ~/.vim/coc_config.vim
 
-" Surround
-Plug 'tpope/vim-surround'
+colorscheme gruvbox
 
-" Navegar entre terminales
-Plug 'christoomey/vim-tmux-navigator'
+"----------------- VIM ----------------------
 
-"Comentar lineas
-Plug 'tpope/vim-commentary'
+" Correr programa de c
+"map <F3> : !gcc % && ./a.out<CR>
+" Correr programa de python
+"map <F5> : !python3 %<CR>
+"
+"--------------------------------------------
+"----------------- NEOVIM ----------------------
 
-"html
-Plug 'mattn/emmet-vim'
+" Correr programa de c
+map <F3> : vert term gcc % && ./a.out<CR>
+" Correr programa de python
+map <F5> : vert term  python3 %<CR>
+" Correr programa de c++
+map <F2> : vert term g++ % && ./a.out<CR>
+"Correr LOVE2D
+map <F1> : vert term love .<CR>
 
-" Mostrar líneas en la identación
-Plug 'yggdroot/indentline'
+"--------------------------------------------
 
-"Autocompletado
-Plug 'neoclide/coc.nvim', {'branch': 'release'} 
-
-Plug 'ryanoasis/vim-devicons'
-Plug 'adelarsq/vim-emoji-icon-theme'
-
-"Cambiar el cursor cuando se está en modo insertar (Solo para vim)
-"Plug 'wincent/terminus'
-
-call plug#end()
+" Modo insertar cuando se entra en terminal (Neovim)
+"autocmd TermOpen * startinsert
