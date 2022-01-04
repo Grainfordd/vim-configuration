@@ -1,55 +1,35 @@
-set encoding=utf-8
-set title  " Muestra el nombre del archivo
-set number  " Indican el número de linea
-syntax enable
-set bg=dark " Fondo Oscuro
-set nowrap " No divide la linea si es muy larga
-set encoding=utf-8
+let mapleader=' '  "Espacio tecla lider
 
 
-set cursorline
-set scrolloff=5 "mantener al cursor alejado de arriba y abajo"
-set colorcolumn=120 " Muestra la columna límite a 120 caracteres.
+nnoremap <leader>w :w<CR>  " Guardar con <líder> + s
+nnoremap <leader>q :q<CR>
 
-set laststatus=2
+"nnoremap <leader>e :e $MYVIMRC<CR>  " Abrir el archivo init.vim con <líder> + e
+nnoremap <leader>e :e ~/.vimrc<CR>  " Abrir el archivo init.vim con <líder> + e
 
-" Identación a n espacios
-set tabstop=4
-set shiftwidth=4
+" Acceder a las configuraciones de mapeado y plugins
+nnoremap <leader>f :e ~/.vim/plugins.vim<CR>
+nnoremap <leader>m :e ~/.vim/maps.vim<CR>
 
-set relativenumber  
-set sw=4
-set mouse=a
+" Usar <líder> + y para copiar al portapapeles
+vnoremap <leader>y "+y
+nnoremap <leader>y "+y
 
-set clipboard
+" Usar <líder> + d para cortar al portapapeles
+vnoremap <leader>d "+d
+nnoremap <leader>d "+d
 
-" Locación de configuración de Plugins, mapeos y COC
-so ~/.vim/plugins.vim
-so ~/.vim/maps.vim
-so ~/.vim/coc_config.vim
+" Usar <líder> + p para pegar desde el portapapeles
+nnoremap <leader>p "+p
+vnoremap <leader>p "+p
 
-colorscheme gruvbox
+" Crear nueva linea sin salir del modo normal
+map <Enter> o<ESC>
+map <S-Enter> O<ESC>
 
-"----------------- VIM ----------------------
+"Configuración NerdTree
+nmap <leader>nt :NERDTreeFind<CR>
+let NERDTreeQuitOnOpen=1
 
-" Correr programa de c
-"map <F3> : !gcc % && ./a.out<CR>
-" Correr programa de python
-"map <F5> : !python3 %<CR>
-"
-"--------------------------------------------
-"----------------- NEOVIM ----------------------
-
-" Correr programa de c
-map <F3> : vert term gcc % && ./a.out<CR>
-" Correr programa de python
-map <F5> : vert term  python3 %<CR>
-" Correr programa de c++
-map <F2> : vert term g++ % && ./a.out<CR>
-"Correr LOVE2D
-map <F1> : vert term love .<CR>
-
-"--------------------------------------------
-
-" Modo insertar cuando se entra en terminal (Neovim)
-"autocmd TermOpen * startinsert
+"Configuración EasyMotion
+nmap <leader>s <Plug>(easymotion-s2)
